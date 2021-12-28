@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
     GstBus *bus;
     GstMessage *msg;
     GstStateChangeReturn ret;
+    // GMainLoop *main_loop;
 
     data.playing = FALSE;
     data.terminate = FALSE;
@@ -43,6 +44,7 @@ int main(int argc, char *argv[])
         g_printerr("Not all elements could be created.\n");
         return -1;
     }
+    // main_loop = g_main_loop_new(NULL, FALSE);
 
     /* Set the URI to play */
     g_object_set(data.playbin, "uri", "https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm", NULL);
@@ -55,6 +57,7 @@ int main(int argc, char *argv[])
         g_object_unref(data.playbin);
         return -1;
     }
+    // g_main_loop_run(main_loop);
 
     /* Listen to the bus */
     bus = gst_element_get_bus(data.playbin);
@@ -109,6 +112,7 @@ int main(int argc, char *argv[])
     gst_object_unref(bus);
     gst_element_set_state(data.playbin, GST_STATE_NULL);
     gst_object_unref(data.playbin);
+    // g_main_loop_unref(main_loop);
     return 0;
 }
 
