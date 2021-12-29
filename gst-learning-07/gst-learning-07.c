@@ -100,6 +100,7 @@ int main(int argc, char *argv[])
     gst_element_set_state(pipeline, GST_STATE_NULL);
 
     gst_object_unref(pipeline);
+    g_main_loop_unref(main_loop);
 
     return 0;
 }
