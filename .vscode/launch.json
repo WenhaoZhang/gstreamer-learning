@@ -29,6 +29,19 @@
             "externalConsole": false,
             "MIMode": "lldb",
             "preLaunchTask": "C/C++: gcc build active file w/ gst-audio"
+        },
+        {
+            "name": "gcc - Build and debug active file w/ gst-pbutils",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "C/C++: gcc build active file w/ gst-pbutils"
         }
     ]
 }
